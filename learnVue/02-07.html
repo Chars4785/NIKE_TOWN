@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to Vue</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+
+    <div id='account'>
+        잔고 : <input type="text" v-model="balance" />
+        <br> 회원님 등급:
+        <span v-if="balance >= 1000000">Gold</span>
+        <span v-else-if="balance >= 500000">Silver</span>
+        <span v-else-if="balance >= 200000">Bronze</span>
+        <span v-else> Basic</span>
+
+    </div>
+    <script type="text/javascript">
+        var simple = new Vue({
+            el: '#account',
+            data: {
+                balance: 0
+
+            }
+        });
+    </script>
+</body>
+
+</html>
